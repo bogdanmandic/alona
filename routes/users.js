@@ -37,10 +37,11 @@ router.post('/:id/pdf', (req, res) => {
     ejs.renderFile('views/users/show2.ejs', {user: user[0]}, function (err, html) {
       if (err) console.log(err);
       var options = { format: 'A5', orientation: 'portrait' };
-      pdf.create(html, options).toFile('./pdf/businesscard2.pdf', function(err, res) {
+      pdf.create(html, options).toFile('./pdf/user_'+user[0].id+ '.pdf', function(err, res) {
         if (err) return console.log(err);
         console.log(res); // { filename: '/app/businesscard.pdf' }
       });
+      res.send(html);
     });
     
   });
