@@ -1,0 +1,14 @@
+<form action="/users/<%=user.id %>/pdf" method="POST">
+  ID:<br>
+  <input type="text" name="id" value=<%= user.id %>><br/>
+  Email:<br>
+  <input type="text" name="email" value=<%= user.email %>><br/>
+  Password:<br>
+  <input type="text" name="password" value=<%= user.password %>><br/>
+  Code:<br>
+  <input type="text" name="code" value=<%= user.code %>><br/>
+  Status:<br>
+  <input type="text" name="status" value=<%= user.status %>><br/>
+
+  <input type="submit" value="SEND">
+</form>
